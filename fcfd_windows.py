@@ -201,6 +201,44 @@ def test_default(board_address: int, data: int) -> None:
 # clock_divider_config: 0 is the TDC test mode, 1 is the external 40MHz mode, 2 is the BCR pulse mode, 3 is the external trigger mode
 # 2.022 ns shift when 74 reads 00, but .978 ns shift when it reads 01
 
+# TDC mode
+def clock_divider_0(board_address: int) -> None:
+    write_fcfd(board_address, 20, 0)
+# External 40MHz
+def clock_divider_1(board_address: int) -> None:
+    write_fcfd(board_address, 20, 16)
+# BCR pulse
+def clock_divider_2(board_address: int) -> None:
+    write_fcfd(board_address, 20, 32)
+# External trigger
+def clock_divider_3(board_address: int) -> None:
+    write_fcfd(board_address, 20, 48)
+# test_out_sel
+def test_out_sel(board_address: int) -> None:
+    write_fcfd(board_address, 20, 8)
+# clk_common_mode
+def clk_common_mode(board_address: int) -> None:
+    write_fcfd(board_address, 0, 37)
+# test_rx_common
+def test_rx_common(board_address: int) -> None:
+    write_fcfd(board_address, 1, 37)
+
+# Link test patterns and srambling, all on register 8
+# disable_scrambler bit 0
+def disable_scrambler(board_address: int) -> None:
+    value = int.from_bytes(read_fcfd(board_address, 8, 1), byteorder = 'big')
+    if value % 2 == 0: write_fcfd(board_address, 8, 1 + value)
+    else: print('Scrambler already disabled')
+# Select the transmitted byte source before scrambling and serialization, bits 2 and 3
+def normal_data_path(board_address: int) -> None:
+    write_fcfd(board_address, 8, 0)
+def pseudo_random(board_address: int) -> None:
+    write_fcfd(board_address, 8, 4)
+def fixed_pattern(board_address: int) -> None:
+    write_fcfd(board_address, 8, 8)
+def eight_bit_counter(board_address: int) -> None:
+    write_fcfd(board_address, 8, 12)
+
 # Example use ------------------------------------------------------------------
 
 
@@ -214,7 +252,15 @@ if __name__ == "__main__":
 
     #test_NACK_rate(board_address, 100) # --> gave a rate of 0.0 for 10000 trials, seems NACKs dont happen
     set_default(board_address, defaults, writeable)
-    write_fcfd(board_address, 20, 48)
+    # clock_divider_3(board_address)
+    # test_out_sel(board_address)
+    # clk_common_mode(board_address)
+    # test_rx_common(board_address)
+
+    normal_data_path(board_address)
+    disable_scrambler(board_address) # alone outputs a 10MHz signal, with short peak followed by wider peak and then a lot of nothing in between until the pair of peaks reappears
+
+
     # print('Register 20 reads: ', read_fcfd(board_address, 20, 1))
     # print('CK40 relative phase: ', read_fcfd(board_address, 74, 1))
     # print('Shifting...')
