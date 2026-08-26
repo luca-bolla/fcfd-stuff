@@ -246,19 +246,19 @@ if __name__ == "__main__":
     time.sleep(1)
     print("Devices found:", dll.GetNumberOfDevices())
     # print("Firmware rev (BCD):", hex(dll.GetFirmwareRevision()))
-    #
+    
     # actual_khz = dll.SetI2CFrequency(100)  # request 100 kHz
-    # print(f"I2C frequency set to ~{actual_khz} kHz")
+    # print(f"I2C frequency set to ~{actual_khz} Hz")
 
-    #test_NACK_rate(board_address, 100) # --> gave a rate of 0.0 for 10000 trials, seems NACKs dont happen
+    # test_NACK_rate(board_address, 100) # --> gave a rate of 0.0 for 10000 trials, seems NACKs dont happen
     set_default(board_address, defaults, writeable)
     # clock_divider_3(board_address)
     # test_out_sel(board_address)
     # clk_common_mode(board_address)
     # test_rx_common(board_address)
 
-    normal_data_path(board_address)
-    disable_scrambler(board_address) # alone outputs a 10MHz signal, with short peak followed by wider peak and then a lot of nothing in between until the pair of peaks reappears
+    # normal_data_path(board_address)
+    # disable_scrambler(board_address) # alone outputs a 10MHz signal, with short peak followed by wider peak and then a lot of nothing in between until the pair of peaks reappears
 
 
     # print('Register 20 reads: ', read_fcfd(board_address, 20, 1))

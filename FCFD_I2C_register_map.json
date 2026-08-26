@@ -1,0 +1,437 @@
+{
+  "clk_enable": {
+    "address": [0],
+    "bit_range": [0],
+    "access": "rw",
+    "default": 1,
+    "description": "Enable the clock input receiver. The actual control bit is not used. The clock input receiver is always enabled."
+  },
+  "clk_inv_data": {
+    "address": [0],
+    "bit_range": [1],
+    "access": "rw",
+    "default": 0,
+    "description": "Invert the clock polarity."
+  },
+  "clk_en_term": {
+    "address": [0],
+    "bit_range": [2],
+    "access": "rw",
+    "default": 1,
+    "description": "Enable input termination for the clock receiver."
+  },
+  "clk_eq": {
+    "address": [0],
+    "bit_range": [3,4],
+    "access": "rw",
+    "default": 0,
+    "description": "The clock receiver equalizer setting."
+  },
+  "clk_common_mode": {
+    "address": [0],
+    "bit_range": [5],
+    "access": "rw",
+    "default": 0,
+    "description": "The clock receiver common-mode setting."
+  },
+  "test_rx_enable": {
+    "address": [1],
+    "bit_range": [0],
+    "access": "rw",
+    "default": 1,
+    "description": "Enable the test input receiver."
+  },
+  "test_rx_inv_data": {
+    "address": [1],
+    "bit_range": [1],
+    "access": "rw",
+    "default": 0,
+    "description": "Invert the test receiver data polarity."
+  },
+  "test_rx_en_term": {
+    "address": [1],
+    "bit_range": [2],
+    "access": "rw",
+    "default": 1,
+    "description": "Enable input termination for the test receiver."
+  },
+  "test_rx_eq": {
+    "address": [1],
+    "bit_range": [3,4],
+    "access": "rw",
+    "default": 0,
+    "description": "Select the test receiver equalizer setting."
+  },
+  "test_rx_common": {
+    "address": [1],
+    "bit_range": [5],
+    "access": "rw",
+    "default": 0,
+    "description": "Select the test receiver common-mode setting."
+  },
+  "ser_inv_data": {
+    "address": [3],
+    "bit_range": [0],
+    "access": "rw",
+    "default": 0,
+    "description": "Invert the serializer driver output data polarity."
+  },
+  "ser_drive_str": {
+    "address": [3],
+    "bit_range": [1,3],
+    "access": "rw",
+    "default": 3,
+    "description": "Set the serializer driver output driver strength."
+  },
+  "ser_emph_mode": {
+    "address": [3],
+    "bit_range": [4,5],
+    "access": "rw",
+    "default": 0,
+    "description": "Select the serializer driver pre-emphasis mode."
+  },
+  "ser_emph_width": {
+    "address": [3],
+    "bit_range": [6,7],
+    "access": "rw",
+    "default": 0,
+    "description": "Set the lower bits of the serializer driver pre-emphasis pulse width."
+  },
+  "ser_emph_width_high": {
+    "address": [4],
+    "bit_range": [0],
+    "access": "rw",
+    "default": 0,
+    "description": "Set the upper bit of the serializer driver pre-emphasis pulse width."
+  },
+  "ser_emph_str": {
+    "address": [4],
+    "bit_range": [1,3],
+    "access": "rw",
+    "default": 3,
+    "description": "Set the serializer driver pre-emphasis strength."
+  },
+  "ser_lowSupplyR": {
+    "address": [4],
+    "bit_range": [4],
+    "access": "rw",
+    "default": 0,
+    "description": "Set serializer driver low supply resistance."
+  },
+  "test_tx_inv_data": {
+    "address": [5],
+    "bit_range": [0],
+    "access": "rw",
+    "default": 0,
+    "description": "Invert the test output data polarity."
+  },
+  "test_tx_drive_str": {
+    "address": [5],
+    "bit_range": [1,3],
+    "access": "rw",
+    "default": 3,
+    "description": "Set the test output driver strength."
+  },
+  "test_tx_emph_mode": {
+    "address": [5],
+    "bit_range": [4,5],
+    "access": "rw",
+    "default": 0,
+    "description": "Select the test output pre-emphasis mode."
+  },
+  "test_tx_emph_width": {
+    "address": [5],
+    "bit_range": [6,7],
+    "access": "rw",
+    "default": 0,
+    "description": "Set the lower bits of the test output pre-emphasis pulse width."
+  },
+  "test_tx_emph_width_high": {
+    "address": [6],
+    "bit_range": [0],
+    "access": "rw",
+    "default": 0,
+    "description": "Set the upper bit of the test output pre-emphasis pulse width."
+  },
+  "test_tx_emph_str": {
+    "address": [6],
+    "bit_range": [1,3],
+    "access": "rw",
+    "default": 3,
+    "description": "Set the test output pre-emphasis strength."
+  },
+  "test_tx_lowSupplyR": {
+    "address": [6],
+    "bit_range": [4],
+    "access": "rw",
+    "default": 0,
+    "description": "Set test out driver low supply resistance."
+  },
+  "disable_scrambler": {
+    "address": [8],
+    "bit_range": [0],
+    "access": "rw",
+    "default": 0,
+    "description": "Disable the data scrambler."
+  },
+  "test_hit": {
+    "address": [8],
+    "bit_range": [1],
+    "access": "rw",
+    "default": 0,
+    "description": "Enable test-hit operation."
+  },
+  "test_pattern_sel": {
+    "address": [8],
+    "bit_range": [2,3],
+    "access": "rw",
+    "default": 0,
+    "description": "Select the readout test pattern."
+  },
+  "group_id": {
+    "address": [8],
+    "bit_range": [4,6],
+    "access": "rw",
+    "default": 0,
+    "description": "Set the group identifier used in readout data frame."
+  },
+  "ADC_Threshold0": {
+    "address": [9],
+    "bit_range": [0,4],
+    "access": "rw",
+    "default": 0,
+    "description": "ADC threshold for channel 0."
+  },
+  "ADC_Threshold1": {
+    "address": [10],
+    "bit_range": [0,4],
+    "access": "rw",
+    "default": 0,
+    "description": "ADC threshold for channel 1."
+  },
+  "ADC_Threshold2": {
+    "address": [11],
+    "bit_range": [0,4],
+    "access": "rw",
+    "default": 0,
+    "description": "ADC threshold for channel 2."
+  },
+  "ADC_Threshold3": {
+    "address": [12],
+    "bit_range": [0,4],
+    "access": "rw",
+    "default": 0,
+    "description": "ADC threshold for channel 3."
+  },
+  "ADC_Threshold4": {
+    "address": [13],
+    "bit_range": [0,4],
+    "access": "rw",
+    "default": 0,
+    "description": "ADC threshold for channel 4."
+  },
+  "ADC_Threshold5": {
+    "address": [14],
+    "bit_range": [0,4],
+    "access": "rw",
+    "default": 0,
+    "description": "ADC threshold for channel 5."
+  },
+  "reset_readout": {
+    "address": [16],
+    "bit_range": [1],
+    "access": "wo",
+    "default": "N/A",
+    "description": "Write strobe to reset the readout logic."
+  },
+  "reset_i2c_readout": {
+    "address": [16],
+    "bit_range": [3],
+    "access": "wo",
+    "default": "N/A",
+    "description": "Write strobe to reset the I2C readout logic."
+  },
+  "skip_ck40_strobe": {
+    "address": [16],
+    "bit_range": [4],
+    "access": "wo",
+    "default": "N/A",
+    "description": "Write strobe to change clk40 phase."
+  },
+  "tdc_latency": {
+    "address": [17],
+    "bit_range": [0,3],
+    "access": "rw",
+    "default": 9,
+    "description": "Set the TDC readout latency."
+  },
+  "tdc_timestamp_num": {
+    "address": [18],
+    "bit_range": [0,5],
+    "access": "rw",
+    "default": 8,
+    "description": "Set the number of TDC timestamps for each measurement."
+  },
+  "tdc_test_hit_freq": {
+    "address": [18],
+    "bit_range": [6,7],
+    "access": "rw",
+    "default": 0,
+    "description": "Select the TDC test-hit frequency."
+  },
+  "tdc_ext_test": {
+    "address": [19],
+    "bit_range": [0],
+    "access": "rw",
+    "default": 0,
+    "description": "Enable external TDC test mode."
+  },
+  "tdc_encoder": {
+    "address": [19],
+    "bit_range": [1],
+    "access": "rw",
+    "default": 0,
+    "description": "Select or enable the TDC encoder mode."
+  },
+  "tdc_overflow_range": {
+    "address": [19],
+    "bit_range": [2,6],
+    "access": "rw",
+    "default": 8,
+    "description": "Set the TDC overflow range."
+  },
+  "i2c_readout_enable": {
+    "address": [20],
+    "bit_range": [0],
+    "access": "rw",
+    "default": 0,
+    "description": "Enable I2C readout."
+  },
+  "i2c_readout_acq_mode": {
+    "address": [20],
+    "bit_range": [1],
+    "access": "rw",
+    "default": 0,
+    "description": "I2C readout acquisition mode. 0: Self-trigger mode. 1: External-trigger mode."
+  },
+  "i2c_readout_ext_test": {
+    "address": [20],
+    "bit_range": [2],
+    "access": "rw",
+    "default": 0,
+    "description": "External test mode selection. 0: Trigger Mode. 1: Rearm Mode."
+  },
+  "test_out_sel": {
+    "address": [20],
+    "bit_range": [3],
+    "access": "rw",
+    "default": 0,
+    "description": "0: clock divider test output. 1: TDC feedback clock signal from channel 5."
+  },
+  "clock_divider_config": {
+    "address": [20],
+    "bit_range": [4,5],
+    "access": "rw",
+    "default": 0,
+    "description": "Configure the clock divider setting."
+  },
+  "channel_mask": {
+    "address": [21],
+    "bit_range": [0,5],
+    "access": "rw",
+    "default": 0,
+    "description": "Mask out individual channels in readout. Active High."
+  },
+  "TDC_hit_flag": {
+    "address": [22],
+    "bit_range": [0,5],
+    "access": "ro",
+    "default": 0,
+    "description": "Hit flags for TDC channels 0 through 5. Bit i corresponds to TDC channel i."
+  },
+  "self_trig_flag": {
+    "address": [22],
+    "bit_range": [6],
+    "access": "ro",
+    "default": 0,
+    "description": "Indicates that data was captured by a self-trigger event."
+  },
+  "ext_trig_flag": {
+    "address": [22],
+    "bit_range": [7],
+    "access": "ro",
+    "default": 0,
+    "description": "Indicates that data was captured by an external-trigger event."
+  },
+  "ch0_TDC_data": {
+    "address": [23,30],
+    "bit_range": [0,7],
+    "access": "ro",
+    "default": 0,
+    "description": "Byte-addressed TDC data for channel 0. Lowest address contains bits [7:0]; highest address contains bits [63:56]."
+  },
+  "ch1_TDC_data": {
+    "address": [31,38],
+    "bit_range": [0,7],
+    "access": "ro",
+    "default": 0,
+    "description": "Byte-addressed TDC data for channel 1. Lowest address contains bits [7:0]; highest address contains bits [63:56]."
+  },
+  "ch2_TDC_data": {
+    "address": [39,46],
+    "bit_range": [0,7],
+    "access": "ro",
+    "default": 0,
+    "description": "Byte-addressed TDC data for channel 2. Lowest address contains bits [7:0]; highest address contains bits [63:56]."
+  },
+  "ch3_TDC_data": {
+    "address": [47,54],
+    "bit_range": [0,7],
+    "access": "ro",
+    "default": 0,
+    "description": "Byte-addressed TDC data for channel 3. Lowest address contains bits [7:0]; highest address contains bits [63:56]."
+  },
+  "ch4_TDC_data": {
+    "address": [55,62],
+    "bit_range": [0,7],
+    "access": "ro",
+    "default": 0,
+    "description": "Byte-addressed TDC data for channel 4. Lowest address contains bits [7:0]; highest address contains bits [63:56]."
+  },
+  "ch5_TDC_data": {
+    "address": [63,70],
+    "bit_range": [0,7],
+    "access": "ro",
+    "default": 0,
+    "description": "Byte-addressed TDC data for channel 5. Lowest address contains bits [7:0]; highest address contains bits [63:56]."
+  },
+  "hit_trig_bcid": {
+    "address": [71,72],
+    "bit_range": [[0,7],[0]],
+    "access": "ro",
+    "default": 0,
+    "description": "9-bit BCID associated with the hit flag. Address 72 bit 0 contains bit 8; address 71 contains bits [7:0]."
+  },
+  "ext_trig_bcid": {
+    "address": [72,73],
+    "bit_range": [[0,7],[0,1]],
+    "access": "ro",
+    "default": 0,
+    "description": "9-bit BCID associated with the external trigger. Address 73 bits [1:0] contain bits [8:7]; address 72 bits [7:1] contain bits [6:0]."
+  },
+  "clk40_phase": {
+    "address": [74],
+    "bit_range": [0,2],
+    "access": "ro",
+    "default": 0,
+    "description": "Read-only CK40 phase status."
+  },
+  "wb_error_count": {
+    "address": [75],
+    "bit_range": [0,7],
+    "access": "ro",
+    "default": 0,
+    "description": "8-bit counter for Wishbone Bus not-acknowledge errors."
+  },
+  "_comment": "This file contains the register map defined in FCFD v1.2 manual Version 0.3"
+}
