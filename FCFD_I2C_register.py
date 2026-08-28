@@ -106,6 +106,9 @@ class FCFD_I2C_register:
         READ_WRITE = 2
     
     def __init__(self, board_address: int, json_file:str = None):
+        time.sleep(1)
+        print("Devices found:", dll.GetNumberOfDevices())
+
         self._registers = {}
         self.board_address = board_address
         if json_file is None:
